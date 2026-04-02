@@ -6,7 +6,7 @@ import re
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 # replace with your saved model path
-MODEL_PATH =  r"C:\Users\anuja\Desktop\My projects\grammar-error-correction\real-time-chat-grammar-correction\Model Trained"
+MODEL_PATH = r"C:\Users\hp\Downloads\Model Trained\Model Trained"
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
 model = AutoModelForSeq2SeqLM.from_pretrained(MODEL_PATH).to(device)
