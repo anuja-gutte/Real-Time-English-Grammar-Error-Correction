@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grammar Glow</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <div class="brand">
+        <span class="brand-icon">✦</span>
+        <span class="brand-name">Grammar Glow</span>
+      </div>
+      <div class="toggle-wrap">
+        <span class="toggle-label" id="toggleLabel">Live</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="realtimeToggle" checked />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <p class="subtitle">Real-time grammar correction as you type</p>
+
+    <div class="status-bar" id="statusBar">
+      <span class="status-dot active" id="statusDot"></span>
+      <span id="statusText">Monitoring active inputs on this page</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="section-label">MANUAL CHECK</p>
+
+    <textarea id="inputText" placeholder="Or paste text here to check manually..."></textarea>
+
+    <button id="getSelectedBtn" class="btn-secondary">⊕ Use Selected Text</button>
+    <button id="checkBtn" class="btn-primary">Check Grammar</button>
+
+    <div id="loading" class="hidden">
+      <div class="spinner"></div>
+      <span>Analysing…</span>
+    </div>
+
+    <div id="result" class="hidden">
+      <div class="card">
+        <div class="card-label">Corrected</div>
+        <p id="correctedText"></p>
+      </div>
+
+      <div class="meta-row">
+        <div class="meta-chip" id="errorTypeChip">
+          <span class="chip-label">Error</span>
+          <span id="errorType">—</span>
+        </div>
+        <div class="meta-chip" id="correctionTypeChip">
+          <span class="chip-label">Type</span>
+          <span id="correctionType">—</span>
+        </div>
+      </div>
+
+      <button id="copyBtn" class="btn-copy">Copy Corrected Text</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
